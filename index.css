@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --moss: #2E4036;
+  --clay: #CC5833;
+  --cream: #F2F0E9;
+  --charcoal: #1A1A1A;
+}
+
+/* Global noise texture to eliminate flat digital rendering */
+.noise-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.font-heading { font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
+.font-drama { font-family: 'Cormorant Garamond', serif; }
+.font-data { font-family: 'IBM Plex Mono', monospace; }
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Grid texture for technical backgrounds */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(46, 64, 54, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(46, 64, 54, 0.1) 1px, transparent 1px);
+}
